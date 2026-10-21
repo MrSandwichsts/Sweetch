@@ -116,8 +116,9 @@ internal sealed class GlobalInput : IDisposable
                 var data = Marshal.PtrToStructure<Win32.KBDLLHOOKSTRUCT>(lParam);
                 var message = (int)wParam;
                 var injected = (data.flags & Win32.LLKHF_INJECTED) != 0;
-                // Ignore synthetic keys (ours and other tools'); a tap must come from the keyboard.
-                if (!injected)
+                // Remote-control tools (Chrome Remote Desktop, AnyDesk…) deliver real key presses as injected
+                // input, so accept those; only skip the dummy key we inject ourselves to neutralise Alt.
+                if (!(injected && data.vkCode == Win32.VK_DUMMY))
                     OnKey(data.vkCode, message is Win32.WM_KEYDOWN or Win32.WM_SYSKEYDOWN);
             }
             catch

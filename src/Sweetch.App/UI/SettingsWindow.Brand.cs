@@ -16,7 +16,7 @@ internal sealed partial class SettingsWindow
             Width = 72, Height = 72, Margin = new Thickness(0, 0, 20, 0)
         });
         var heading = new StackPanel { VerticalAlignment = VerticalAlignment.Center };
-        heading.Children.Add(Text("Sweetch 1.0", 30, FontWeights.SemiBold));
+        heading.Children.Add(Text($"Sweetch {Shell.Updater.Current.ToString(3)}", 30, FontWeights.SemiBold));
         heading.Children.Add(Text(T("A new shape for your files.", "Новая форма ваших файлов."), 14, brush: Theme.Muted));
         header.Children.Add(heading); root.Children.Add(header);
         root.Children.Add(Card(T("Project creator", "Автор проекта"), "@mmmorozov",
@@ -28,7 +28,7 @@ internal sealed partial class SettingsWindow
             T("News and feedback on the project's Telegram channel.", "Новости и обратная связь в Telegram-канале проекта."),
             Button("@mmmorozov", () => Shell.Updater.Open(Brand.Channel), glyph: ""), glyph: ""));
         root.Children.Add(SectionHeader(T("Updates", "Обновления")));
-        root.Children.Add(Card("Sweetch 1.0", T("Automatic updates are disabled. New releases will be announced on the channel.", "Автообновления отключены. Новые версии будут опубликованы в канале."), null, glyph: ""));
+        root.Children.Add(Card($"Sweetch {Shell.Updater.Current.ToString(3)}", T("Automatic updates are disabled. New releases will be announced on the channel.", "Автообновления отключены. Новые версии будут опубликованы в канале."), null, glyph: ""));
         var footer = Text(T("Local processing. Your files stay on your computer.", "Локальная обработка. Ваши файлы остаются на компьютере."), 12, brush: Theme.Muted);
         footer.Margin = new Thickness(2, 24, 0, 0); root.Children.Add(footer);
     }

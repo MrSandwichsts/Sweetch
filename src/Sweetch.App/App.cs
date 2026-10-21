@@ -123,12 +123,17 @@ internal sealed class App : Application
         HandleArgs(_args);
     }
 
+    /// <summary>Adds the context menu entry; autostart only if the user agrees (both can be changed in Settings).</summary>
     private static void TryIntegrateOnFirstRun()
     {
+        var autostart = MessageBox.Show(
+            T("Start Sweetch automatically when you sign in to Windows?\n\nThe drag-and-drop wheel only works while Sweetch is running. You can change this later in Settings.",
+              "Запускать Sweetch автоматически при входе в Windows?\n\nКруговое меню при перетаскивании работает, только пока Sweetch запущен. Это можно изменить позже в настройках."),
+            "Sweetch", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.Yes;
         try
         {
             ShellIntegration.SetContextMenu(true);
-            ShellIntegration.SetAutostart(true);
+            ShellIntegration.SetAutostart(autostart);
         }
         catch (Exception ex) when (ex is UnauthorizedAccessException or System.Security.SecurityException or IOException)
         {

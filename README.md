@@ -1,15 +1,21 @@
-# Sweetch 1.0
+# Sweetch 1.0.1
 
-Файловый конвертер для Windows с круговым меню. Автор проекта Sweetch: [@mmmorozov](https://t.me/mmmorozov).
+Файловый конвертер для Windows с круговым меню. Автор проекта Sweetch: [@mmmorozov](https://t.me/mmmorozov). Это форк [krllmrzv/Sweetch](https://github.com/krllmrzv/Sweetch).
 
 ## Скачать программу для Windows
 
 | Вариант | Скачать | Как запустить |
 | --- | --- | --- |
-| **Установщик EXE** | [Sweetch 1.0 — установить](https://github.com/krllmrzv/Sweetch/releases/download/v1.0/Sweetch-1.0-Setup-win-x64.exe) | Запустите установщик. Он добавит программу в меню «Пуск» и позволит удалить её через настройки Windows. |
-| **Архив ZIP без установки** | [Sweetch 1.0 — скачать архив](https://github.com/krllmrzv/Sweetch/releases/download/v1.0/Sweetch-1.0-win-x64.zip) | Распакуйте всю папку и запустите `Sweetch.exe`. |
+| **Установщик EXE** | [Sweetch 1.0.1 — установить](https://github.com/MrSandwichsts/Sweetch/releases/download/v1.0.1/Sweetch-1.0.1-Setup-win-x64.exe) | Запустите установщик. Он добавит программу в меню «Пуск» и позволит удалить её через настройки Windows. |
+| **Архив ZIP без установки** | [Sweetch 1.0.1 — скачать архив](https://github.com/MrSandwichsts/Sweetch/releases/download/v1.0.1/Sweetch-1.0.1-win-x64.zip) | Распакуйте всю папку и запустите `Sweetch.exe`. |
 
-Оба варианта содержат готовую программу, .NET и Pandoc. Нужна Windows 10 (1809+) или Windows 11, x64. [Все файлы релиза и контрольные суммы SHA-256](https://github.com/krllmrzv/Sweetch/releases/tag/v1.0). Пункты **Source code** и кнопка **Code → Download ZIP** предназначены для разработчиков и содержат исходники.
+Оба варианта содержат готовую программу, .NET и Pandoc. Нужна Windows 10 (1809+) или Windows 11, x64. [Все релизы и контрольные суммы SHA-256](https://github.com/MrSandwichsts/Sweetch/releases).
+
+## Что нового в 1.0.1
+
+- Автозапуск больше не включается сам: при первом запуске программа спрашивает об этом (по умолчанию — нет). Переключатель остаётся в настройках.
+- Круговое меню работает через удалённый доступ (Chrome Remote Desktop, AnyDesk и т. п.): нажатия клавиш оттуда больше не игнорируются.
+- Номер версии в окне «О программе» берётся из одного места. Пункты **Source code** и кнопка **Code → Download ZIP** предназначены для разработчиков и содержат исходники.
 
 <p align="center">
   <img src="docs/dark.png" width="48%" alt="Sweetch: красно-чёрная тема" />
