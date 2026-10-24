@@ -1,6 +1,6 @@
 # Sweetch 1.0.1
 
-Файловый конвертер для Windows с круговым меню. Автор проекта Sweetch: [@mmmorozov](https://t.me/mmmorozov). Это форк [krllmrzv/Sweetch](https://github.com/krllmrzv/Sweetch).
+Файловый конвертер для Windows с круговым меню.
 
 ## Скачать программу для Windows
 
@@ -36,13 +36,6 @@
 
 Изображения (включая RAW с камер: CR2/CR3, NEF, ARW, RAF, DNG, ORF, RW2 и др.), аудио, видео, PDF, документы, таблицы, презентации, субтитры и архивы. Доступные операции зависят от типа входного файла. **Pandoc 3.12.1 включён в архив**: конвертация DOCX, Markdown, HTML, EPUB, RTF и TXT не требует скачивания Pandoc. Распакуйте всю папку, включая `tools`. Для аудио и видео FFmpeg скачивается через настройки; LibreOffice для части операций Office/PDF устанавливается отдельно. Обработка файлов локальная.
 
-## Поддержать проект
-
-- [DonatePay](https://donatepay.ru/don/1539048)
-- USDT · TRC20: `TQHTy7kbk3ngYTUfrTpEeSi3hP38tnqJNU`
-- [Telegram-канал](https://t.me/mmmorozov)
-
-Автообновления отключены: Sweetch 1.0 не обращается к серверу обновлений и не устанавливает сторонние версии. Новые версии будут объявляться в канале. Обратная связь открывает Telegram; встроенной отправки сообщений на сторонний сервер нет.
 
 ## Сборка
 
@@ -55,8 +48,6 @@ dotnet test tests/Sweetch.Tests -c Release
 ```
 
 Для установщика нужен [Inno Setup 6 или 7](https://jrsoftware.org/isdl.php): после `build.ps1` выполните `./scripts/build-installer.ps1`. Результат появится в `artifacts/`.
-
-GitHub Actions проверяет программу и установку, создаёт ZIP и установщик EXE с контрольными суммами и публикует их в релизе по тегу `v*`. Отдельный workflow **Publish installer for existing release** добавляет установщик к уже выпущенному ZIP, проверяя его SHA-256 и сохраняя файлы программы без изменений. Репозиторий проекта: [krllmrzv/Sweetch](https://github.com/krllmrzv/Sweetch).
 
 ## Лицензия
 
